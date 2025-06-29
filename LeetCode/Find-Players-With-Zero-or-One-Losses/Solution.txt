@@ -1,0 +1,18 @@
+from collections import defaultdict
+
+class Solution:
+    def findWinners(self, matches):
+        losses = defaultdict(int)
+        players = set()
+        
+        for winner, loser in matches:
+            losses[loser] += 1
+            players.add(winner)
+            players.add(loser)
+        
+        no_losses = [p for p in players if losses[p] == 0]
+        one_loss = [p for p in players if losses[p] == 1]
+        
+        return [sorted(no_losses), sorted(one_loss)]
+
+        
