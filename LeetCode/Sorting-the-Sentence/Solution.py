@@ -5,7 +5,7 @@ class Solution:
             for char in word:
                 if char.isdigit():
                     number += char
-            return int(number)
+            return number
         array = s.split()
         sorted_array = sorted(array , key=isnumber)
         result = []
@@ -14,6 +14,4 @@ class Solution:
             result.append(x)
         result = ' '.join(result)
         return result
-
-        # array = sorted(array)
         
